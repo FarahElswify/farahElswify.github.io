@@ -1,0 +1,373 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b1020">
+  <title>Farah Elsweify | UI/UX Designer</title>
+  <meta name="description" content="UI/UX design portfolio featuring web and mobile interface design by Farah Elsweify.">
+
+  <style>
+    :root {
+      --bg: #0b1020;
+      --surface: #121a2c;
+      --text: #f5f7ff;
+      --muted: #a5aec3;
+      --accent: #8b9cff;
+      --border: #27324a;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(1100px, 90%);
+      margin: auto;
+    }
+
+    header {
+      padding: 22px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo { font-weight: 800; font-size: 20px; }
+
+    nav a, .muted { color: var(--muted); }
+
+    .hero { padding: 95px 0 75px; }
+
+    .eyebrow {
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 760px;
+      font-size: clamp(38px, 7vw, 70px);
+      line-height: 1.08;
+      letter-spacing: -2px;
+      margin: 18px 0;
+    }
+
+    .hero p {
+      max-width: 620px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .button {
+      display: inline-block;
+      margin: 14px 10px 0 0;
+      padding: 11px 18px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+
+    .button.primary {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #10152a;
+    }
+
+    .button:hover { transform: translateY(-2px); opacity: 0.9; }
+
+    section { padding: 45px 0 65px; }
+
+    h2 {
+      font-size: 30px;
+      letter-spacing: -0.7px;
+      margin-bottom: 8px;
+    }
+
+    .section-intro { color: var(--muted); margin-top: 0; }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+      margin-top: 28px;
+    }
+
+    .project {
+      overflow: hidden;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+    }
+
+    .preview {
+      min-height: 210px;
+      padding: 26px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background:
+        radial-gradient(circle at top right, #34446e, transparent 60%),
+        linear-gradient(135deg, #1b2741, #101729);
+    }
+
+    .mockup {
+      width: 100%;
+      max-width: 300px;
+      padding: 22px;
+      background: #f7f8fc;
+      color: #182036;
+      border-radius: 13px;
+      box-shadow: 0 18px 45px #0005;
+    }
+
+    .mockup .line {
+      height: 8px;
+      margin: 10px 0;
+      border-radius: 10px;
+      background: #dce2ef;
+    }
+
+    .mockup .short { width: 55%; }
+    .mockup .medium { width: 75%; }
+
+    .mockup .pill {
+      display: inline-block;
+      padding: 7px 12px;
+      margin-top: 8px;
+      border-radius: 8px;
+      background: #dce3ff;
+      color: #3047a8;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .project-content { padding: 23px; }
+
+    .project h3 { font-size: 21px; margin: 0 0 8px; }
+
+    .project p { color: var(--muted); margin: 0 0 15px; }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 15px 0;
+    }
+
+    .tag {
+      padding: 5px 10px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      color: #c8d0e5;
+      font-size: 12px;
+    }
+
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .project-links a {
+      color: var(--accent);
+      font-weight: 650;
+      font-size: 14px;
+    }
+
+    .about {
+      padding: 28px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+    }
+
+    footer {
+      padding: 28px 0;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 700px) {
+      .projects { grid-template-columns: 1fr; }
+      .hero { padding: 65px 0 45px; }
+      h1 { letter-spacing: -1px; }
+      nav { align-items: flex-start; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <a class="logo" href="#">Farah Elsweify<span style="color:#8b9cff">.</span></a>
+        <a href="#projects">Projects ↓</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="eyebrow">UI/UX Designer</div>
+        <h1>Designing digital experiences that feel simple and intuitive.</h1>
+        <p>
+          I'm Farah, a UI/UX designer focused on clean interfaces,
+          thoughtful user experiences, and responsive digital products.
+          Explore a selection of my design projects below.
+        </p>
+        <a class="button primary" href="#projects">Explore my work</a>
+        <a class="button" href="https://github.com/FarahElswify" target="_blank" rel="noopener noreferrer">GitHub profile ↗</a>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <div class="eyebrow">Selected work</div>
+        <h2>Featured Projects</h2>
+        <p class="section-intro">A selection of UI explorations and interface design work.</p>
+
+        <div class="projects">
+
+          <!-- PROJECT 1 -->
+          <article class="project">
+            <div class="preview">
+              <div class="mockup">
+                <strong>Good afternoon ☀️</strong>
+                <div style="font-size:34px;font-weight:800;margin-top:10px">24°C</div>
+                <div class="line medium"></div>
+                <div class="line short"></div>
+                <span class="pill">Weather overview</span>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3>Weather Widget</h3>
+              <p>A compact weather interface with reusable weather icon variants and a clear information hierarchy.</p>
+              <div class="tags">
+                <span class="tag">UI Design</span>
+                <span class="tag">Components</span>
+                <span class="tag">Figma</span>
+              </div>
+              <div class="project-links">
+                <a href="https://www.figma.com/design/iItOMTZaRnHaOQD3L1SIqZ/Weather-Widget?node-id=1-2" target="_blank" rel="noopener noreferrer">Main component ↗</a>
+                <a href="https://www.figma.com/design/iItOMTZaRnHaOQD3L1SIqZ/Weather-Widget?node-id=2-70" target="_blank" rel="noopener noreferrer">Weather icons ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 2 -->
+          <article class="project">
+            <div class="preview">
+              <div class="mockup" style="max-width:230px">
+                <div style="text-align:right;color:#7d8498;font-size:12px">History</div>
+                <div style="text-align:right;font-size:31px;font-weight:750;margin:16px 0">1,248</div>
+                <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:7px">
+                  <span class="pill">AC</span><span class="pill">±</span><span class="pill">%</span><span class="pill">÷</span>
+                  <span class="pill">7</span><span class="pill">8</span><span class="pill">9</span><span class="pill">×</span>
+                  <span class="pill">4</span><span class="pill">5</span><span class="pill">6</span><span class="pill">−</span>
+                  <span class="pill">1</span><span class="pill">2</span><span class="pill">3</span><span class="pill">+</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3>Calculator UI</h3>
+              <p>A mobile calculator interface concept featuring History and Scientific Mode screens.</p>
+              <div class="tags">
+                <span class="tag">Mobile UI</span>
+                <span class="tag">Interaction Design</span>
+                <span class="tag">Figma</span>
+              </div>
+              <div class="project-links">
+                <a href="https://www.figma.com/design/iItOMTZaRnHaOQD3L1SIqZ/Weather-Widget?node-id=6-47" target="_blank" rel="noopener noreferrer">History screen ↗</a>
+                <a href="https://www.figma.com/design/iItOMTZaRnHaOQD3L1SIqZ/Weather-Widget?node-id=6-76" target="_blank" rel="noopener noreferrer">Scientific mode ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 3 -->
+          <article class="project">
+            <div class="preview">
+              <div class="mockup">
+                <strong>Secure Checkout</strong>
+                <div class="line medium" style="margin-top:20px"></div>
+                <div class="line"></div>
+                <div class="line short"></div>
+                <div style="display:flex;gap:8px">
+                  <div class="line" style="flex:1"></div>
+                  <div class="line" style="flex:1"></div>
+                </div>
+                <span class="pill">Pay securely</span>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3>Credit Card Input Form</h3>
+              <p>A checkout UI concept with clearly grouped card details and desktop and mobile layouts.</p>
+              <div class="tags">
+                <span class="tag">Web UI</span>
+                <span class="tag">Responsive Design</span>
+                <span class="tag">Figma</span>
+              </div>
+              <div class="project-links">
+                <a href="https://www.figma.com/design/iItOMTZaRnHaOQD3L1SIqZ/Weather-Widget?node-id=8-29" target="_blank" rel="noopener noreferrer">Desktop design ↗</a>
+                <a href="https://www.figma.com/design/iItOMTZaRnHaOQD3L1SIqZ/Weather-Widget?node-id=8-71" target="_blank" rel="noopener noreferrer">Mobile design ↗</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="eyebrow">About me</div>
+        <h2>A little about my work</h2>
+        <div class="about">
+          <p>
+            I enjoy turning ideas into clear, usable interfaces.
+            My work includes interface layouts, component-based design,
+            responsive screens, and improving the way information is presented.
+          </p>
+          <p class="muted">
+            Tools: Figma · UI Design · UX Design · Responsive Interfaces
+          </p>
+          <a class="button" href="https://github.com/FarahElswify" target="_blank" rel="noopener noreferrer">Visit my GitHub ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © <span id="year"></span> Farah Elsweify · UI/UX Design Portfolio
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+
